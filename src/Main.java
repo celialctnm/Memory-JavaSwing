@@ -1,4 +1,6 @@
 import Vue.*;
+import Model.*;
+import Controller.*;
 
 import javax.swing.*;
 
@@ -7,8 +9,10 @@ public class Main {
         javax.swing.SwingUtilities.invokeLater( new Runnable() {
 
             public void run() {
-                Fenetre f = new Fenetre();
-
+                Fenetre fenetre = new Fenetre();
+                Modele modele = new Modele();
+                Control control = new Control(fenetre,modele,fenetre.chrono);
+                fenetre.setTitle("Memory");
             }
         });
     }

@@ -6,7 +6,6 @@ import Model.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Scanner;
@@ -22,10 +21,6 @@ public class ControlM extends AbstractAction{
         this.fen = fen;
     }
 
-    public void activeBouton(){
-        fen.case1.setEnabled(true);
-    }
-
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == fen.item1){
@@ -33,16 +28,14 @@ public class ControlM extends AbstractAction{
             fen.dispose();
             modele = new Modele();
             fen = new Fenetre();
-
         }
-
 
         if (e.getSource() == fen.item2){
             System.out.println("Affichage scores");
 
             try
             {
-                FileInputStream file = new FileInputStream("Scores/score1.txt");
+                FileInputStream file = new FileInputStream("src/Scores/scores.txt");
                 Scanner scanner = new Scanner(file);
 
                 String score1 = scanner.nextLine();
