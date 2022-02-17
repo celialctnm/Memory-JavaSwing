@@ -12,22 +12,6 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Control implements ActionListener {
-
-
-    public JDialog gameover;
-    public JLabel txtgameover;
-    public JButton bgameover;
-
-    /*
-    Cartes
-     */
-    public ImageIcon CarteSelect;
-    public ImageIcon CarteSelect2;
-
-    public JButton carte1;
-    public JButton carte2;
-
-
     /*
     Maintenance
      */
@@ -39,15 +23,6 @@ public class Control implements ActionListener {
     JButton carteSelected3 = null;
 
     public int nbrPaires = 0;
-
-
-
-
-    /*
-    Paires
-     */
-
-    public int NBRPAIRES = 0;
 
     public Control() {
     }
@@ -61,83 +36,6 @@ public class Control implements ActionListener {
         Chrono chrono = new Chrono(fen.temps);
 
     }
-
-    /*
-    Nombre d'essais restants
-     */
-
-    public int NBRESSAI() {
-        int nbressai = this.modele.getNbressai();
-        nbressai = this.modele.setNbressai(nbressai - 1);
-        fen.essai.setText("Essais restants : " + nbressai);
-        if (nbressai == 0) {
-            fen.chrono.stop();
-            JOptionPane.showMessageDialog(null, "Vous avez perdu");
-
-        }
-
-        return nbressai;
-    }
-
-    /*
-    Nombres de cartes retournées
-     */
-
-    public int NBRCARTERETOURNEES() {
-        int nbrCR = modele.getNBRcartesRetournees();
-        nbrCR = modele.setNBRcartesRetournees(nbrCR + 1);
-        return nbrCR;
-    }
-
-    /*
-    Comparer deux images
-     */
-
-    public boolean CompareImage() {
-        return CarteSelect.equals(CarteSelect2);
-    }
-
-
-    /*
-    reinitialiser différentes cartes selectionnées
-     */
-
-    public void reinitialiseCartesSelect() {
-
-        CarteSelect = null;
-        CarteSelect2 = null;
-        carte1 = null;
-        carte2 = null;
-    }
-
-    /*
-    Desactiver boutons cartes 1 et 2
-     */
-
-    public void desactiverCarte1et2() {
-
-        carte1.setEnabled(false);
-        carte2.setEnabled(false);
-    }
-
-    /*
-    retourner cartes
-    */
-
-    public void rectocartes() {
-        carte1.setIcon(fen.rectoCarte);
-        carte2.setIcon(fen.rectoCarte);
-    }
-
-    public boolean isSameImg(JButton button, JButton button2) {
-        System.out.println(button.getIcon());
-        System.out.println(button2.getIcon());
-        if (button.getIcon() == button2.getIcon()) {
-            return true;
-        }
-        return false;
-    }
-
     /*
     Maintenance
      */
@@ -164,7 +62,6 @@ public class Control implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         initWidgetC();
-        System.out.println(modele.EtatPartie() + " Nombres de paires : " + this.nbrPaires);
 
         if (modele.etatPartie) {
             fen.chrono.start();

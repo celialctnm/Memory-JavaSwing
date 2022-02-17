@@ -14,6 +14,8 @@ public class ControlM extends AbstractAction{
 
     Fenetre fen;
     Modele modele;
+    Lynx lynx;
+    Modele_Lynx modele_lynx;
 
 
     public ControlM(Fenetre fen, Modele modele, Chrono chrono) {
@@ -22,6 +24,13 @@ public class ControlM extends AbstractAction{
     }
 
     public void actionPerformed(ActionEvent e) {
+
+        if (e.getSource() == fen.jeu_objets){
+            System.out.println("Bouton jeu objet");
+            fen.dispose();
+            modele_lynx = new Modele_Lynx();
+            lynx = new Lynx();
+        }
 
         if (e.getSource() == fen.item1){
             System.out.println("Nouvelle partie");

@@ -20,9 +20,6 @@ public class Fenetre extends JFrame{
     public GridLayout Ggrille;
     public JPanel Pgrille;
 
-    //Essai
-    public JLabel essai;
-
     //Control
     public Control control;
     public Modele modele;
@@ -41,13 +38,13 @@ public class Fenetre extends JFrame{
     public JMenu menu;
     public JMenuItem item1;
     public JMenuItem item2;
+    public JMenuItem jeu_objets;
 
 
     public Fenetre() {
 
         initAttribut();
         creerWidgetVersion();
-        setLocationRelativeTo(null);
         setSize(630,680);
         setResizable(false);
         setLocationRelativeTo(null);
@@ -68,9 +65,6 @@ public class Fenetre extends JFrame{
 
         Fenetreprincipale = new JPanel();
 
-        Ggrille = new GridLayout(4,4);
-        Pgrille = new JPanel();
-        Pgrille.setPreferredSize(new Dimension(620,580));
 
         modele.loadImages();
         modele.randomOrder();
@@ -81,7 +75,7 @@ public class Fenetre extends JFrame{
             imagesList[i] = modele.listeImages[i];
         }
 
-        imagesPaths = new String[]{"src/images/image0.jpeg","src/images/image1.jpeg","src/images/image2.jpeg","src/images/image3.jpeg","src/images/image4.jpeg","src/images/image5.jpeg","src/images/image6.jpeg","src/images/image7.jpeg","src/images/image0.jpeg","src/images/image1.jpeg","src/images/image2.jpeg","src/images/image3.jpeg","src/images/image4.jpeg","src/images/image5.jpeg","src/images/image6.jpeg","src/images/image7.jpeg"};
+        imagesPaths = new String[imagesList.length];
         buttonList = new JButton[imagesPaths.length];
         for (int i = 0; i<imagesPaths.length; i++){
             rectoCarte = new ImageIcon("src/Vue/imageRecto.jpg");
@@ -89,8 +83,10 @@ public class Fenetre extends JFrame{
             buttonList[i] = cases;
             buttonList[i].addActionListener(control);
         }
-        essai = new JLabel("Essais restants : " + modele.getNbressai());
-        essai.setPreferredSize(new Dimension(200,10));
+
+        Ggrille = new GridLayout(4,6);
+        Pgrille = new JPanel();
+        Pgrille.setPreferredSize(new Dimension(620,580));
     }
 
     public void creerWidgetVersion(){
@@ -101,19 +97,22 @@ public class Fenetre extends JFrame{
         }
 
         barMenu = new JMenuBar();
-        menu = new JMenu("Options");
+        menu = new JMenu("Jeu et options");
         item1 = new JMenuItem(controlMenu);
         item1.setText("Nouvelle partie");
         item2 = new JMenuItem(controlMenu);
         item2.setText("Meilleurs scores");
+        jeu_objets = new JMenuItem(controlMenu);
+        jeu_objets.setText("Jeu Lynx");
 
+
+        menu.add(jeu_objets);
         menu.add(item1);
         menu.add(item2);
         barMenu.add(menu);
 
         Fenetreprincipale.add(temps);
         Fenetreprincipale.add(Pgrille);
-        Fenetreprincipale.add(essai);
 
         setContentPane(Fenetreprincipale);
         setJMenuBar(barMenu);
