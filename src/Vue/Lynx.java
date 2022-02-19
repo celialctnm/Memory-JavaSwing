@@ -66,7 +66,7 @@ public class Lynx extends JFrame{
 
         buttonList = new JButton[imagesList.length];
         for (int i = 0; i<imagesList.length; i++){
-            ImageIcon imageIcon = new ImageIcon(String.valueOf(imagesList[i]));
+            ImageIcon imageIcon = new ImageIcon("src/Vue/imageRecto.jpg");
             JButton cases = new JButton(imageIcon);
             buttonList[i] = cases;
             buttonList[i].addActionListener(controller_lynx);

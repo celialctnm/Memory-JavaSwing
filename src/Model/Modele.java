@@ -11,7 +11,7 @@ public class Modele {
     /*
     Maintenances
      */
-    String[] imagesPaths = new String[28];
+    String[] imagesPaths = new String[20];
     public ImageIcon[] listeImages = new ImageIcon[imagesPaths.length];
     public boolean etatPartie = true;
 
@@ -27,7 +27,7 @@ public class Modele {
                 cpt++;
             }
             System.out.println(cpt);
-            int cpt2 = 14;
+            int cpt2 = 10;
             for (final File fileEntry : Objects.requireNonNull(folder.listFiles())) {
                 listeImages[cpt2] = new ImageIcon("src/images" + '/' + fileEntry.getName());
                 cpt2++;

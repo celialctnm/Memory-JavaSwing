@@ -45,7 +45,7 @@ public class Fenetre extends JFrame{
 
         initAttribut();
         creerWidgetVersion();
-        setSize(630,680);
+        setSize(620,780);
         setResizable(false);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -84,9 +84,9 @@ public class Fenetre extends JFrame{
             buttonList[i].addActionListener(control);
         }
 
-        Ggrille = new GridLayout(4,6);
+        Ggrille = new GridLayout(5,4);
         Pgrille = new JPanel();
-        Pgrille.setPreferredSize(new Dimension(620,580));
+        Pgrille.setPreferredSize(new Dimension(580,700));
     }
 
     public void creerWidgetVersion(){

@@ -50,12 +50,16 @@ public class Controller_Lynx implements ActionListener {
         }
     }
 
+    public void associerImagesBoutons(){
+        for (int i = 0; i<lynx.imagesList.length; i++){
+            lynx.buttonList[i].setIcon(lynx.imagesList[i]);
+        }
+    }
+
     public void actionPerformed(ActionEvent e) {
         initWidgetC();
 
         if (modele.etatPartie) {
-            modele.etatPartie = false;
-
             //Mise en place des images à trouver
             images = new ImageIcon[3];
             for (int i = 0; i<3; i++) {
@@ -84,11 +88,11 @@ public class Controller_Lynx implements ActionListener {
             lynx.chrono.start();
         }
 
+        modele.etatPartie = false;
+        associerImagesBoutons();
         //Comparaison de la carte selectionnée avec celles à trouver
-        if (carteSelectionnee == null){
+        if (carteSelectionnee == null && modele.etatPartie == false){
             carteSelectionnee = (JButton) e.getSource();
-            System.out.println(carteSelectionnee.getIcon());
-
 
             for (int i = 0; i< images.length; i++){
                 if (carteSelectionnee.getIcon().toString().equals(images[i].toString())){
