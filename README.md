@@ -22,5 +22,7 @@ Architecture MVC et codé en Java Swing et Java.
 **Ressources**
 =
 Images du jeu memory : images personnelles
+
 Images du jeu lynx : images libre de droit
+
 Image recto des cartes : image libre de droit
