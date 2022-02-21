@@ -85,6 +85,8 @@ public class Fenetre extends JFrame{
         }
 
         Ggrille = new GridLayout(5,4);
+        Ggrille.setHgap(10);
+        Ggrille.setVgap(10);
         Pgrille = new JPanel();
         Pgrille.setPreferredSize(new Dimension(580,700));
     }

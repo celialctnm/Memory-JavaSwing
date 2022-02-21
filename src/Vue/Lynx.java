@@ -74,8 +74,11 @@ public class Lynx extends JFrame{
 
 
         Ggrille = new GridLayout(5,5);
+        Ggrille.setHgap(10);
+        Ggrille.setVgap(10);
         Pgrille = new JPanel();
         Pgrille.setPreferredSize(new Dimension(620,580));
+
     }
 
     public void creerWidgetVersion(){

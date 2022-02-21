@@ -81,7 +81,8 @@ public class Controller_Lynx implements ActionListener {
             panelDialog.add(new JButton(carteSelected3));
 
             modelDialog.add(panelDialog);
-            modelDialog.setBounds(0, 0, 620, 300);
+            modelDialog.setTitle("Lynx");
+            modelDialog.setBounds(0, 0, 620, 170);
             modelDialog.setLocationRelativeTo(null);
             modelDialog.setVisible(true);
 
