@@ -12,12 +12,12 @@ Ce projet est un jeu du memory composé d'un écran principal contenant les cart
 Découvrir une première carte, puis la suivante. Si elles sont identiques, vous gagnez une paire, sinon, elles sont retournées et la partie continue. 
 Le chrono démarre dès qu'une carte est selectionée et s'arrête une fois toutes les paires réunies. 
 
-*Fonctionnalité maintenance - Jeu bonus* : inspiré du jeu Lynx, le joueur a la possibilité de choisir ce mode de jeu. Il devra dans un premier temps, mémoriser 3 images qui seront sur l'écran, puis les retrouver le plus rapidement possible dans une grille d'image.
+*Fonctionnalité maintenance - jeu bonus* : inspiré du jeu Lynx, le joueur a la possibilité de choisir ce mode de jeu. Il devra dans un premier temps, mémoriser 3 images qui seront sur l'écran, puis les retrouver le plus rapidement possible dans une grille d'image.
 
 
 **Programmation**
 =
-Architecture MVC et codé en Java Swing et Java. 
+Architecture MVC et le projet est codé en Java Swing et Java. 
 
 **Ressources**
 =
